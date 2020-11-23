@@ -1,0 +1,18 @@
+<div class='container'>
+    <ng-container *ngIf='!otpSent; else otpContainer'>
+        <div class='sec-container'>
+            <input [(ngModel)]='phoneNumber' class='get-input' placeholder='Phone' type='number' >
+            <button (click)='sendOtp()' class='button-press'>Get OTP</button>
+        </div>
+    </ng-container>
+    <ng-template #otpContainer>
+        <div class='sec-container'>
+            <input [(ngModel)]='otp' class='get-input' type='text'>
+            <button (click)='signIn()' class='button-press'>Sign In</button>
+        </div>
+    </ng-template>
+    <div *ngIf="error">
+       error: {{error}}
+    </div>
+    <div id='sign-in-button'></div>
+</div>
